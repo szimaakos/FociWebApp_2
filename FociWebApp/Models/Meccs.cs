@@ -12,5 +12,33 @@ namespace FociWebApp.Models
         public int VendegFelido { get; set; }
         public string? Hazaicsapat {  get; set; }
         public string? Vendegcsapat { get; set; }
+
+        public string GyoztesCsapatNeve()
+        {
+            if (HazaiVeg > VendegVeg)
+            {
+                return Hazaicsapat;
+            }
+            else if (HazaiVeg < VendegVeg)
+            {
+                return Vendegcsapat;
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        public int PontSzam()
+        {
+            if (HazaiVeg > VendegVeg || VendegVeg > HazaiVeg)
+            {
+                return 3;
+            }
+            else
+            {
+                return 1;
+            }
+        }
     }
 }

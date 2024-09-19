@@ -1,0 +1,37 @@
+﻿@page
+@model FociWebApp.Pages.BajnoksagAllasaModel
+@{
+    ViewData["Title"] = "Bajnokság állása";
+}
+<h1>Bajnokság állása</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Helyezés</th>
+            <th>Csapat neve</th>
+            <th>Játszott mérkőzés</th>
+            <th>Győzelem</th>
+            <th>Döntetlen</th>
+            <th>Vereség</th>
+            <th>Pontszám</th>
+            <th>Lőtt gól</th>
+            <th>Kapott gól</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.csapatokEredemenyei.Count(); i++)
+        {
+            <tr>
+                <td>@(i + 1)</td>
+                <td>@Model.csapatokEredemenyei[i].CsapatNev</td>
+                <td>@Model.csapatokEredemenyei[i].JatszottMeccsekSzama</td>
+                <td>@Model.csapatokEredemenyei[i].GyozelemekSzama</td>
+                <td>@Model.csapatokEredemenyei[i].DontetlenekSzama</td>
+                <td>@Model.csapatokEredemenyei[i].VeresegekSzama</td>
+                <td>@Model.</td>
+                <td>@Model.csapatokEredemenyei[i].LottGolokSzama</td>
+                <td>@Model.csapatokEredemenyei[i].KapottGolokSzama</td>
+            </tr>
+        }
+    </tbody>
+</table>
